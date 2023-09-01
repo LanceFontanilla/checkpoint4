@@ -7,23 +7,26 @@ body {
 
 .quote-wrapper {}
 
-.quote-body {
+.quote-author {
     visibility: hidden;
     opacity: 0;
     transition: ease 1s;
 
-    backdrop-filter: blur(20px);
-    border: 2px solid white;
-    border-radius: 5px;
-    padding: .5em;
-    background-color: rgba(22, 19, 28, 0.59);
 }
 
-.quote-header {
+.quote-content {
     cursor: pointer;
 }
 
-.quote-header+.quote-body {
+.quote-content:hover+.quote-author {
     visibility: visible;
     opacity: 1;
+}
+
+.weatherCard {
+
+    border: 2px solid white;
+    border-radius: 10px;
+
+    background-color: rgba(22, 19, 28, 0.59);
 }

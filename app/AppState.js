@@ -12,6 +12,7 @@ class ObservableAppState extends EventEmitter {
 
   quote = null
 
+  weather = null
 
 
 

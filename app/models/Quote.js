@@ -8,9 +8,13 @@ export class Quote {
 
     get QuoteTemplate() {
         return `
-        <div class="text-center p-3">
-            <h4>${this.author}</h4>
-            <h2>${this.content}</h2>
+        <div class="quote-wrapper">
+            <div class="text-center quote-content p-3">
+            <h4 class="">${this.content}</h4>
+            </div>
+            <div class="text-center quote-author p-3">
+            <h5 class="">${this.author}</h5>
+            </div>
         </div>
         
         `
