@@ -2,6 +2,7 @@ import { AboutController } from "./controllers/AboutController.js";
 import { BackgroundsController } from "./controllers/BackgroundsController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { QuotesController } from "./controllers/QuotesController.js";
+import { TodosController } from "./controllers/TodosController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { WeathersController } from "./controllers/WeathersController.js";
 import { AboutView } from "./views/AboutView.js";
@@ -16,7 +17,7 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: [HomeController, QuotesController, BackgroundsController, WeathersController],
+    controller: [HomeController, QuotesController, BackgroundsController, WeathersController, TodosController],
     // view: /*html*/`
 
     // `

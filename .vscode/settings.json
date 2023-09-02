@@ -2,7 +2,10 @@
   "javascript.preferences.importModuleSpecifier": "relative",
   "javascript.preferences.importModuleSpecifierEnding": "js",
   "cSpell.ignoreWords": [
+    "Celem",
+    "Felem",
     "divoff",
-    "divon"
+    "divon",
+    "todos"
   ],
 }

@@ -48,17 +48,37 @@
 
     </nav>
 
-
-
   </header>
+
+
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="sandboxApodsOffCanvas"
+    aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">My Favorites</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="sandboxApods">
+      <!-- STUB Todo template -->
+      <div class="">
+        <span class="">#1 Todo</span>
+        <span class="">#2 Todo</span>
+
+      </div>
+    </div>
+  </div>
+
+  <button data-bs-toggle="offcanvas" data-bs-target="#sandboxApodsOffCanvas" class="btn text-light fs-2"><i
+      class="mdi mdi-book"></i></button>
+
 
   <!-- SECTION -->
   <main>
 
-    <section id="router-view">
+    <section id="router-view" class="text-light">
       <!-- primary viewport -->
-    </section>
 
+    </section>
 
 
 
@@ -82,26 +102,38 @@
         <div class=" col-4 justify-content-center align-items-center d-flex" id="weather">
           <!--//STUB WEATHER TEMPLATE-  -->
           <!-- <div class="row weatherCard">
-            <div class="col-6">
-              <h6 class="p-1">100 °F</h6>
+            <div>
+              <div class="col-7 text-center">
+                <h6 class="bs-1 bt-2" id="tempF" style="display:block"
+                  onclick="app.WeathersController.toggleTempDisplay()">
+                  ${this.tempF} °F</h6>
+              </div>
+              <div class="col-7 text-center">
+                <h6 class="bs-1 bt-2" id="tempC" style="display:none"
+                  onclick="app.WeathersController.toggleTempDisplay()">
+                  ${this.tempC} °C</h6>
+              </div>
             </div>
-            <div class="col-6">
-              <h6 class="p-1">Sunny</h6>
+            <div class="col-5 text-center d-flex align-items-center">
+              <h6 class="">${this.description}</h6>
             </div>
           </div> -->
-
         </div>
 
 
         <div class="col-4 flex-grow-1 justify-content-center align-items-center d-flex p-5">
           <div class="fs-1" id="displayTime"></div>
         </div>
-        <div class="col-4 flex-grow-1 justify-content-end align-items-center d-flex" id="authstate">
+        <div class="col-4 flex-grow-1 justify-content-center align-items-center d-flex" id="authstate">
         </div>
 
       </div>
     </div>
   </footer>
+
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>

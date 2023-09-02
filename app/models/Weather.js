@@ -13,13 +13,21 @@ export class Weather {
     get WeatherTemplate() {
         return `
         <div class="row weatherCard">
-            <div class="col-7 text-center">
-            <h6 class="bs-1 bt-2" id="tempOn" style="display:none" onclick="app.WeathersController.toggleTemp(temp)">${this.tempC} °C</h6>
-            <h6 class="bs-1" id="tempOff" style="display:block" onclick="app.WeathersService.toggleTemp('tempId')">${this.tempF} °F</h6>
+            <div>
+                <div class="col-12 text-center selectable">
+                <h6 class="bs-1 bt-2" id="tempF" style="display:block"
+                onclick="app.WeathersController.toggleTempDisplay()">
+                ${this.tempF} °F</h6>
+                </div>
+                <div class="col-12 text-center selectable">
+                <h6 class="bs-1 bt-2" id="tempC" style="display:none"
+                onclick="app.WeathersController.toggleTempDisplay()">
+                ${this.tempC} °C</h6>
+                </div>
             </div>
-            <div class="col-5 text-center d-flex align-items-center">
-            <h6 class="">${this.description}</h6>
-            </div>
+                <div class="col-12 text-center">
+                <h6 class="">${this.description}</h6>
+                </div>
         </div>
         
         `

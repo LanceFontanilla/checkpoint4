@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js"
+import { Weather } from "../models/Weather.js"
 import { weathersService } from "../services/WeathersService.js"
 import { Pop } from "../utils/Pop.js"
 import { setHTML } from "../utils/Writer.js"
@@ -17,14 +18,30 @@ function _drawClock() {
     setTimeout(_drawClock, 1000);
 }
 
+function _drawTempElem() {
+    console.log('drawing toggle')
+    let tempCelem = document.getElementById('tempC')
+    let tempFelem = document.getElementById('tempF')
+
+    if (AppState.isVisible == true) {
+        tempCelem.style.display = 'none'
+        tempFelem.style.display = 'block'
+    } else {
+        tempCelem.style.display = 'block'
+        tempFelem.style.display = 'none'
+    }
+
+}
+
 
 export class WeathersController {
     constructor() {
 
         _drawClock()
-        console.log('weather controller')
         this.getWeather()
+        console.log('weather controller')
         AppState.on('weather', _drawWeather)
+        AppState.on('isVisible', _drawTempElem)
 
     }
 
@@ -36,9 +53,9 @@ export class WeathersController {
         }
     }
 
-    // toggleTemp() {
-    //     weathersService.toggleTemp()
-    // }
+    toggleTempDisplay() {
+        weathersService.toggleTempDisplay()
+    }
 
 
 }

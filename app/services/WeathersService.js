@@ -17,17 +17,12 @@ class WeathersService {
 
     }
 
-    // toggleTemp(tempId) {
-    //     let f = tempId + 'On';
-    //     let c = tempId + 'Off';
-    //     if (document.getElementById(f).style.display == 'block') {
-    //         document.getElementById(f).style.display = 'none';
-    //         document.getElementById(c).style.display = 'block';
-    //     } else {
-    //         document.getElementById(c).style.display = 'none';
-    //         document.getElementById(f).style.display = 'block'
-    //     }
-    // }
+    toggleTempDisplay() {
+        AppState.isVisible = !AppState.isVisible
+        console.log(AppState.isVisible)
+        AppState.emit('isVisible')
+
+    }
 
 
 }
