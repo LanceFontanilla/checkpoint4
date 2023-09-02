@@ -6,7 +6,7 @@ import { loadState } from './utils/Store.js'
 class ObservableAppState extends EventEmitter {
 
 
-
+  isVisible = true
 
   background = null
 
@@ -14,7 +14,7 @@ class ObservableAppState extends EventEmitter {
 
   weather = null
 
-
+  displayTime = null
 
 
 

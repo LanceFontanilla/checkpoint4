@@ -8,6 +8,7 @@ import { AboutView } from "./views/AboutView.js";
 
 
 
+
 /**
  * Register your routes for the application here
  * @type {Route[]}

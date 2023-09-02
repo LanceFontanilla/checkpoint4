@@ -10,9 +10,18 @@ function _drawWeather() {
 }
 
 
+function _drawClock() {
+    console.log('drawing clock')
+    let time = new Date();
+    document.getElementById('displayTime').innerText = time.toLocaleTimeString("en-US");
+    setTimeout(_drawClock, 1000);
+}
+
 
 export class WeathersController {
     constructor() {
+
+        _drawClock()
         console.log('weather controller')
         this.getWeather()
         AppState.on('weather', _drawWeather)
@@ -26,4 +35,10 @@ export class WeathersController {
             Pop.error(error)
         }
     }
+
+    // toggleTemp() {
+    //     weathersService.toggleTemp()
+    // }
+
+
 }
