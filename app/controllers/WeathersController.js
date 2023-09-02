@@ -13,7 +13,7 @@ function _drawWeather() {
 function _drawClock() {
     console.log('drawing clock')
     let time = new Date();
-    document.getElementById('displayTime').innerText = time.toLocaleTimeString("en-US");
+    document.getElementById('displayTime').innerText = time.toLocaleTimeString();
     setTimeout(_drawClock, 1000);
 }
 
