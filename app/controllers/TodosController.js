@@ -42,11 +42,18 @@ function _styleComplete() {
     AppState.todos.forEach(todo => {
 
         if (todo.completed == true) {
-            const nodeList = document.querySelectorAll(".todos");
-            for (let i = 0; i < nodeList.length; i++) {
-                nodeList[i].style.backgroundColor = "red";
-            }
-            console.log('completing styling')
+            let todoElem = document.getElementById('todos')
+            todoElem.style.backgroundColor = 'red'
+
+
+
+            // const nodeList = document.querySelectorAll(".todos");
+            // for (let i = 0; i < nodeList.length; i++) {
+            //     nodeList[i].style.backgroundColor = "red";
+            // }
+            console.log('completing styling', todo)
+        } else {
+
         }
     })
 }
@@ -83,7 +90,7 @@ export class TodosController {
             console.log('making new todo',)
 
             form.reset()
-
+            _styleComplete()
         } catch (error) {
             Pop.error(error)
         }
