@@ -55,21 +55,47 @@
   <div class="offcanvas offcanvas-end  text-light weatherCard" tabindex="-1" id="todoOffCanvas"
     aria-labelledby="todoOffCanvas">
     <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="todoOffCanvas">To Do List</h5>
+      <h5 class="offcanvas-title" id="todoOffCanvas">ToDos List</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body" id="todo">
-      <!-- STUB Todo template -->
 
-      <!-- <div class="container-fluid">
+    <div class="offcanvas-body">
+      <!-- //SECTION - Form for new Todo -->
+      <div>
+        <div class="fs-3 p-1" id="todoCount"> </div>
+        <form class="container-fluid" onsubmit="app.TodosController.createTodo()">
+
+          <div class="row p-0 b-0">
+            <div class="p-0 b-0 col-10 form-floating align-items-center mb-3 col-4">
+              <input required type="text" minLength="3" maxLength="" class="form-control" id="addTodo"
+                name="description" placeholder="Add Todo">
+              <label class="text-dark" for="addTodo">Add Todo</label>
+            </div>
+            <div class="p-0 b-0 col-2 fs-1 ">
+              <button type="submit" class="btn btn-info"> + </button>
+            </div>
+          </div>
+
+
+        </form>
+      </div>
+
+      <!-- //SECTION - Todo List -->
+      <div class="col-12" id="todos">
+        <!-- STUB Todo template -->
+
+        <!-- <div class="container-fluid">
         <div class="row justify-content-evenly d-flex align-items-center">
           <div class="col-1 form-check text-dark">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
           </div>
           <span class=" col-8 align-items-center">#1 Todo</span>
           <button class="col-1 btn btn-dark text-light justify-content-center d-flex"><span
-              class="mdi mdi-delete-forever"> </span></button>
-        </div> -->
+            class="mdi mdi-delete-forever"> </span></button>
+          </div> -->
+      </div>
+
+
 
     </div>
 

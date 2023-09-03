@@ -5,7 +5,7 @@ import { loadState } from './utils/Store.js'
 
 class ObservableAppState extends EventEmitter {
 
-  temp = null
+
 
   isVisible = true
 
@@ -17,7 +17,7 @@ class ObservableAppState extends EventEmitter {
 
   displayTime = null
 
-  todo = null
+  todos = []
 
 
 
