@@ -40,9 +40,13 @@ function _todoCount() {
 
 function _styleComplete() {
     AppState.todos.forEach(todo => {
+
         if (todo.completed == true) {
-            document.getElementById(todo).style = 'text-decoration:line-through;'
-            console.log()
+            const nodeList = document.querySelectorAll(".todos");
+            for (let i = 0; i < nodeList.length; i++) {
+                nodeList[i].style.backgroundColor = "red";
+            }
+            console.log('completing styling')
         }
     })
 }
