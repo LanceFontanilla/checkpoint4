@@ -42,11 +42,11 @@ class TodosService {
         const res = await api.put(`api/todos/${todoId}`, foundTodo)
         console.log('editing ToDo', foundTodo, AppState.todos)
 
+        // const updatedTodo = new Todo(res.data)
+        // let originalTodoIndex = AppState.todos.findIndex(todo => todo.id == todoId)
 
-        const updatedTodo = new Todo(res.data)
-        let originalTodoIndex = AppState.todos.findIndex(todo => todo.id == todoId)
-
-        AppState.todos.splice(originalTodoIndex, 1, updatedTodo)
+        // AppState.todos.splice(originalTodoIndex, 1, updatedTodo)
+        // console.log(updatedTodo, 'this is the updated todo')
         AppState.emit('todos')
     }
 }
