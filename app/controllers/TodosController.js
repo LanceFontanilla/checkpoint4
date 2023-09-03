@@ -38,25 +38,40 @@ function _todoCount() {
     })
 }
 
+//FIXME - Cannot read properties of undefined (reading completed)
+// function _styleComplete(todoId) {
+//     let foundTodo = AppState.todos.find(todo => todo.id == todoId)
+//     if (foundTodo.completed == true) {
+//         let todoElem = document.getElementById(foundTodo)
+//         todoElem.style.backgroundColor = 'red'
+//     }
+//     console.log('completing styling', todoId)
+// }
+
+//FIXME - Colors all background red
+// function _styleComplete() {
+//     AppState.todos.forEach(todo => {
+//         if (todo.completed == true) {
+//             let todoElem = document.getElementById('todos')
+//             todoElem.style.backgroundColor = 'red'
+//             console.log('completing styling', todo)
+//         }
+//     })
+// }
+
+//FIXME - Says Styling but nothing happens
 function _styleComplete() {
     AppState.todos.forEach(todo => {
-
         if (todo.completed == true) {
-            let todoElem = document.getElementById('todos')
-            todoElem.style.backgroundColor = 'red'
-
-
-
-            // const nodeList = document.querySelectorAll(".todos");
-            // for (let i = 0; i < nodeList.length; i++) {
-            //     nodeList[i].style.backgroundColor = "red";
-            // }
+            const nodeList = document.querySelectorAll(".todos");
+            for (let i = 0; i < nodeList.length; i++) {
+                nodeList[i].style.backgroundColor = "red";
+            }
             console.log('completing styling', todo)
-        } else {
-
         }
     })
 }
+
 
 
 
