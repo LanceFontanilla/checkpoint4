@@ -13,7 +13,6 @@ function _drawTodos() {
     setHTML('todos', template)
 }
 
-
 function _wait() {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -38,42 +37,6 @@ function _todoCount() {
     })
 }
 
-//FIXME - Cannot read properties of undefined (reading completed)
-// function _styleComplete(todoId) {
-//     let foundTodo = AppState.todos.find(todo => todo.id == todoId)
-//     if (foundTodo.completed == true) {
-//         let todoElem = document.getElementById(foundTodo)
-//         todoElem.style.backgroundColor = 'red'
-//     }
-//     console.log('completing styling', todoId)
-// }
-
-//FIXME - Colors all background red
-// function _styleComplete() {
-//     AppState.todos.forEach(todo => {
-//         if (todo.completed == true) {
-//             let todoElem = document.getElementById('todos')
-//             todoElem.style.backgroundColor = 'red'
-//             console.log('completing styling', todo)
-//         }
-//     })
-// }
-
-//FIXME - Says Styling but nothing happens
-function _styleComplete() {
-    AppState.todos.forEach(todo => {
-        if (todo.completed == true) {
-            const nodeList = document.querySelectorAll(".todos");
-            for (let i = 0; i < nodeList.length; i++) {
-                nodeList[i].style.backgroundColor = "red";
-            }
-            console.log('completing styling', todo)
-        }
-    })
-}
-
-
-
 
 export class TodosController {
     constructor() {
@@ -82,10 +45,8 @@ export class TodosController {
         AppState.on('todos', _drawTodos)
         AppState.on('account', _drawTodos)
         AppState.on('todos', _todoCount)
-        AppState.on('todos', _styleComplete)
+        //AppState.on('todos', _styleComplete)
     }
-
-
 
     async getTodos() {
         try {
@@ -104,8 +65,9 @@ export class TodosController {
             await todosService.createTodo(formData)
             console.log('making new todo',)
 
+            // @ts-ignore
             form.reset()
-            _styleComplete()
+
         } catch (error) {
             Pop.error(error)
         }
@@ -126,7 +88,7 @@ export class TodosController {
         try {
             await todosService.completeTodo(todoId)
             console.log('completing todo')
-
+            _drawTodos()
 
         } catch (error) {
             Pop.error(error)
