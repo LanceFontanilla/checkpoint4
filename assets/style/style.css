@@ -25,10 +25,7 @@ body {
 }
 
 .weatherCard {
-
-    border: 2px solid white;
-    border-radius: 10px;
-
+    border-radius: 15px;
     background-color: rgba(22, 19, 28, 0.59);
 }
 

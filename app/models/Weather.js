@@ -13,6 +13,7 @@ export class Weather {
     get WeatherTemplate() {
         return `
         <div class="row weatherCard">
+            <div class="col-12 text-center">
             <div>
                 <div class="col-12 text-center selectable">
                 <h6 class="pt-2 bs-1" id="tempF" style="display:block"
@@ -25,13 +26,14 @@ export class Weather {
                 ${this.tempC} °C</h6>
                 </div>
             </div>
-                <div class="col-6 text-center justify-content-center">
+                <div class="col-12 text-center">
                 <h1></h1>
-                <h6 class="">${this.description}</h6>
+                <h6 class="mb-0">${this.description}</h6>
                 </div>
-                <div class="col-6 text-center">
+                <div class="pt-0 col-12 text-center">
                 <img src=" https://openweathermap.org/img/wn/${this.icon}.png" alt="">
                 </div>
+            </div>
         </div>
         
         `
