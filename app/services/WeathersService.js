@@ -21,9 +21,13 @@ class WeathersService {
         AppState.isVisible = !AppState.isVisible
         console.log(AppState.isVisible)
         AppState.emit('isVisible')
-
     }
 
+    toggleTimeDisplay() {
+        AppState.timeIsVisible = !AppState.timeIsVisible
+        console.log(AppState.timeIsVisible)
+        AppState.emit('timeIsVisible')
+    }
 
 }
 

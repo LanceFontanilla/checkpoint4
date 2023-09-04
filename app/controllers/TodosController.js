@@ -37,7 +37,6 @@ function _todoCount() {
     })
 }
 
-
 export class TodosController {
     constructor() {
         console.log('Todos Controller')
@@ -45,7 +44,6 @@ export class TodosController {
         AppState.on('todos', _drawTodos)
         AppState.on('account', _drawTodos)
         AppState.on('todos', _todoCount)
-        //AppState.on('todos', _styleComplete)
     }
 
     async getTodos() {
@@ -89,10 +87,8 @@ export class TodosController {
             await todosService.completeTodo(todoId)
             console.log('completing todo')
             _drawTodos()
-
         } catch (error) {
             Pop.error(error)
         }
-
     }
 }

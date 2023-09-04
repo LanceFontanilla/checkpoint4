@@ -14,9 +14,15 @@ function _drawWeather() {
 function _drawClock() {
     console.log('drawing clock')
     let time = new Date();
-    document.getElementById('displayTime').innerText = time.toLocaleTimeString();
+    if (AppState.timeIsVisible == true) {
+        document.getElementById('displayTime').innerText = time.toLocaleTimeString();
+    } else {
+        document.getElementById('displayTime').innerText = time.toLocaleTimeString("en-US", { hour12: false })
+    }
     setTimeout(_drawClock, 1000);
 }
+
+
 
 function _drawTempElem() {
     console.log('drawing toggle')
@@ -57,5 +63,8 @@ export class WeathersController {
         weathersService.toggleTempDisplay()
     }
 
+    toggleTimeDisplay() {
+        weathersService.toggleTimeDisplay()
+    }
 
 }
