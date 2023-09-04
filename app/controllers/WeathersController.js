@@ -23,7 +23,6 @@ function _drawClock() {
 }
 
 
-
 function _drawTempElem() {
     console.log('drawing toggle')
     let tempCelem = document.getElementById('tempC')
@@ -36,19 +35,15 @@ function _drawTempElem() {
         tempCelem.style.display = 'block'
         tempFelem.style.display = 'none'
     }
-
 }
-
 
 export class WeathersController {
     constructor() {
-
         _drawClock()
         this.getWeather()
         console.log('weather controller')
         AppState.on('weather', _drawWeather)
         AppState.on('isVisible', _drawTempElem)
-
     }
 
     async getWeather() {
