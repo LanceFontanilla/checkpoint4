@@ -33,7 +33,13 @@ class TodosService {
         foundTodo.completed = true
         const res = await api.put(`api/todos/${todoId}`, foundTodo)
         console.log('editing ToDo', foundTodo, AppState.todos)
-        await this.getTodos()
+
+        const updatedTodo = new Todo(res.data)
+        let originalTodoIndex = AppState.todos.findIndex(todo => todo.id == todoId)
+        AppState.todos.splice(originalTodoIndex, 1, updatedTodo)
+
+        //await this.getTodos() //TODO - change this to splice, look at Greg'sList
+
         AppState.emit('todos')
     }
 }
